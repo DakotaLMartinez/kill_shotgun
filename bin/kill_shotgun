@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 pid=$(lsof -i :9393 -sTCP:LISTEN |awk 'NR > 1 {print $2}')
-kill $pid
+if [ $pid ]
+then
+    kill $pid
+else
+    echo "No Shotgun Server Active on port 9393"
+fi
