@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kill_shotgun (0.2.2)
+    kill_shotgun (0.3.0)
 
 GEM
   remote: https://rubygems.org/

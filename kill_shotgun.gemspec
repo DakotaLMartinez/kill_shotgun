@@ -22,6 +22,6 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   
-  spec.executables   = ["kill_shotgun"]
+  spec.executables   = ["kill_shotgun", "kill_shotgun_wsl"]
   spec.require_paths = ["lib"]
 end

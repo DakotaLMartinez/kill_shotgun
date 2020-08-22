@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+puts "Killed processes will print below. If you didn't see any output that means you didn't have any shotgun servers active."
+bash = <<-BASH
+pids=$(ps ax | grep shotgun|awk 'NR > 0 {print $1}') 
+arr=()
+
+for i in "${pids[@]}" ; do 
+    if ps -p $i
+    then
+        arr+=($i)
+    fi
+done  
+
+for i in "${arr[@]}" ; do 
+    if ps -p $i
+    then
+        echo "killing process: $i"
+        kill $i
+    fi
+done  
+BASH
+system(bash)
